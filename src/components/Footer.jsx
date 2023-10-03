@@ -5,7 +5,7 @@ function Footer() {
   return (
     <Grid
       container
-      style={{ position: "fixed", bottom: 0, border: "1px solid #ee7f00" }}
+      // style={{ position: "fixed", bottom: 0, border: "1px solid #ee7f00" }}
     >
       <Grid item xs={12}>
         <p

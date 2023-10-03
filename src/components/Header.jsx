@@ -1,9 +1,17 @@
 import { React } from "react";
 import Grid from "@mui/material/Grid";
+import logo from "../assets/images/logo.svg";
 
 function Header() {
   return (
-    <Grid container>
+    <Grid
+      container
+      style={{
+        padding: "20px 0",
+        display: "flex",
+        justifyContent: "flex-start",
+      }}
+    >
       <Grid item xs={12}>
         <h1
           style={{
@@ -13,11 +21,14 @@ function Header() {
             color: "#ea650d",
             fontFamily: "Consolas",
             textAlign: "center",
-            border: "1px solid #ee7f00",
+            // border: "1px solid #ee7f00",
           }}
         >
           NN Quotation Tool
         </h1>
+      </Grid>
+      <Grid>
+        <img src={logo} style={{ width: 120, height: 66 }} />
       </Grid>
     </Grid>
   );
