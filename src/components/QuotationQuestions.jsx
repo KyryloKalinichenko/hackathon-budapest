@@ -5,32 +5,9 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import Button from "@mui/material/Button";
 import { ThemeProvider } from "@emotion/react";
-import { createTheme } from "@mui/material/styles";
-import { deepOrange, grey } from "@mui/material/colors";
+import boy from "../assets/images/watercolours/boy.png";
 
-function QuotationQuestions() {
-  const theme = createTheme({
-    palette: {
-      primary: deepOrange,
-      secondary: {
-        main: grey[200],
-      },
-    },
-    components: {
-      MuiButton: {
-        defaultProps: {
-          disableRipple: true,
-          disableElevation: true,
-        },
-        styleOverrides: {
-          root: {
-            width: "100%",
-          },
-        },
-      },
-    },
-  });
-
+function QuotationQuestions({ theme }) {
   return (
     <ThemeProvider theme={theme}>
       <Grid
@@ -80,21 +57,11 @@ function QuotationQuestions() {
                   sx={{ borderColor: "#ee7f00" }}
                 />
               </FormControl>
-              <Button
-                variant="contained"
-                disableRipple
-                disableElevation
-                // sx={{
-                //   bgcolor: "#ea650d",
-                //   "&:hover": { bgcolor: "#ee7f00" },
-                //   width: "50%",
-                //   margin: "0 auto",
-                // }}
-              >
-                Continue
-              </Button>
+              <Button variant="contained">Continue</Button>
             </Grid>
-            <Grid item xs={6}></Grid>
+            <Grid item xs={6}>
+              <img src={boy} width="50%" />
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
