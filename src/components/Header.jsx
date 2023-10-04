@@ -21,7 +21,6 @@ function Header() {
             color: "#ea650d",
             fontFamily: "Consolas",
             textAlign: "center",
-            // border: "1px solid #ee7f00",
           }}
         >
           NN Quotation Tool
