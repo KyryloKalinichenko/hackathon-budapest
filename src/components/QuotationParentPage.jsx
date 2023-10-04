@@ -1,8 +1,9 @@
 import { React } from "react";
 import Divider from "@mui/material/Divider";
 import Header from "./Header";
-import Footer from "./Footer";
+// import LandingPage from "./LandingPage";
 import QuotationQuestions from "./QuotationQuestions";
+import QuotationResult from "./QuotationResult";
 
 function QuotationParentPage() {
   return (
@@ -18,13 +19,15 @@ function QuotationParentPage() {
         <Header />
       </div>
       <Divider />
-      <div style={{ flex: "9", paddingTop: "40px" }}>
+      <div style={{ flex: "10", paddingTop: "40px" }}>
+        {/* <LandingPage /> */}
         <QuotationQuestions />
+        {/* <QuotationResult /> */}
       </div>
-      <Divider />
-      <div style={{ flex: "1" }}>
+      {/* <Divider /> */}
+      {/* <div style={{ flex: "1" }}>
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }
