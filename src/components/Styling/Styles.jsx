@@ -1,8 +1,8 @@
 
 export const GridStyle = 
     {
-        height: "10rem",
-        width: "20rem",
+        minHeight: "10rem",
+        minWidth: "20rem",
         display: "flex",
         backgroundColor: "whitesmoke",
         padding: "10%"
