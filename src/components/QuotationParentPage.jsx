@@ -3,32 +3,9 @@ import Divider from "@mui/material/Divider";
 import Header from "./Header";
 import LandingPage from "./LandingPage";
 import QuotationQuestions from "./QuotationQuestions";
-import { createTheme } from "@mui/material/styles";
-import { deepOrange, grey } from "@mui/material/colors";
+import { Grid } from "@mui/material";
 
 function QuotationParentPage() {
-  const theme = createTheme({
-    palette: {
-      primary: deepOrange,
-      secondary: {
-        main: grey[200],
-      },
-    },
-    components: {
-      MuiButton: {
-        defaultProps: {
-          disableRipple: true,
-          disableElevation: true,
-        },
-        styleOverrides: {
-          root: {
-            width: "100%",
-          },
-        },
-      },
-    },
-  });
-
   const [activePageIndex, setActivePageIndex] = useState(0);
 
   return (
@@ -40,28 +17,36 @@ function QuotationParentPage() {
         height: "100vh",
       }}
     >
-      <div style={{ flex: "2" }}>
+      <div style={{ flex: "1" }}>
         <Header />
       </div>
       <Divider />
-      <div style={{ flex: "10", paddingTop: "40px" }}>
-        {activePageIndex === 0 ? (
-          <LandingPage theme={theme} setActivePageIndex={setActivePageIndex} />
+      <div style={{ flex: "11" }}>
+        {activePageIndex > 0 && activePageIndex < 4 ? (
+          <p>Progress bar</p>
         ) : undefined}
-        {activePageIndex > 0 && activePageIndex < 3 ? (
-          <QuotationQuestions
-            theme={theme}
-            activePageIndex={activePageIndex}
-            setActivePageIndex={setActivePageIndex}
-          />
-        ) : undefined}
+        <Grid
+          container
+          sx={{ justifyContent: "center", padding: "15%" }}
+          spacing={5}
+        >
+          {activePageIndex === 0 ? (
+            <LandingPage setActivePageIndex={setActivePageIndex} />
+          ) : undefined}
+          {activePageIndex > 0 && activePageIndex < 4 ? (
+            <QuotationQuestions
+              activePageIndex={activePageIndex}
+              setActivePageIndex={setActivePageIndex}
+            />
+          ) : undefined}
 
-        {/* {activePageIndex === 4 ? (
+          {/* {activePageIndex === 4 ? (
           <QuotationResult
             theme={theme}
             setActivePageIndex={setActivePageIndex}
           />
         ) : undefined} */}
+        </Grid>
       </div>
     </div>
   );
