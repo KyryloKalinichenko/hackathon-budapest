@@ -1,9 +1,8 @@
-import { GridStyle, theme } from "./Styling/Styles";
+import { GridStyle } from "./Styling/Styles";
 import { Price } from "./ResultsSubElements/Price";
 import { PriceConfiguration } from "./ResultsSubElements/PriceConfiguration";
 import Grid from "@mui/material/Grid"
 import { useState } from "react";
-import { ThemeProvider } from "@emotion/react";
 
 
 export default function QuotationResult(){
@@ -12,14 +11,15 @@ export default function QuotationResult(){
     function changeResult(updatedResult){
         setResult(updatedResult);
     }
-    return <ThemeProvider theme={theme}>
-        <Grid container sx={{justifyContent: "center", padding: "15%"}} spacing={5}>
-            <Grid item  sx={GridStyle}>
+    return <div>
+        <Grid container sx={{justifyContent: "center", marginTop:"10%", backgroundColor:"white"}} spacing={5}>
+            <Grid item xs={12} md={4} sx={GridStyle}>
                 <PriceConfiguration result={result} resultChanger={changeResult}/>
             </Grid >
-            <Grid item  sx={GridStyle} >
-                <Price resultValue={result} />
+            <Grid item xs={12} md={4} sx={GridStyle} >
+                <Price resultValue={result}/>
             </Grid>
+            
         </Grid>
-    </ThemeProvider>
+    </div>
 }

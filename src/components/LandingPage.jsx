@@ -3,20 +3,22 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import hero from "../assets/images/family.jpg";
 import mother from "../assets/images/mother.jpg";
+import { GridStyle, theme } from "./Styling/Styles";
 
-function LandingPage({ theme, setActivePageIndex }) {
+
+function LandingPage({ setActivePageIndex }) {
   return (
     <ThemeProvider theme={theme}>
+
       <Grid container sx={{ justifyContent: "center", alignItems: "center" }}>
         <Grid item >
           <div sx={{display:"flex"}}>
             <div><img src={hero} width="100%" /></div>
-            <div sx={{position:"relative"}}>TEXT</div>
           </div>
           
         </Grid>
         
-        <Grid item sx={{padding:"1%"}}>
+        <Grid item sx={{padding:"3%"}}>
           <h3>Protect your family’s income </h3>
           <p>
             With a death insurance policy, you can offer your family financial protection tailored to their needs. That’s because you choose the capital insured and the frequency of your premiums.  
@@ -35,7 +37,7 @@ You can’t limit the suffering of your loved ones, But you can ease the financi
         <Grid item xs={6}>
           <img src={mother} width="100%"/>
         </Grid>
-        <Grid item xs={6} sx={{padding:"1%"}}>
+        <Grid item xs={6} sx={{padding:"3%"}}>
           <h3>How does it work?</h3>
           <p>
           
@@ -47,6 +49,7 @@ You choose the capital according to your specific situation: your income, your c
 Your beneficiaries receive the insured capital if you die as a result of illness or accident before the end date of the contract.
           </p>
         </Grid>
+
       </Grid>
     </ThemeProvider>
   );

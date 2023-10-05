@@ -1,69 +1,38 @@
 import Grid from "@mui/material/Grid";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputAdornment from "@mui/material/InputAdornment";
-import Button from "@mui/material/Button";
 import { ThemeProvider } from "@emotion/react";
 import boy from "../assets/images/watercolours/boy.png";
+import { GridStyle, theme } from "./Styling/Styles";
+import BirthDate from "./Questions/Birthdate";
 
-function QuotationQuestions({ theme }) {
+function QuotationQuestions(activePageIndex, setActivePageIndex) {
+  console.log("activePageIndex:", activePageIndex);
   return (
     <ThemeProvider theme={theme}>
       <Grid
-        container
+        item
+        xs={6}
         sx={{
-          alignItems: "center",
-          justifyContent: "center",
-          width: "100%",
+          GridStyle,
+          // border: "1px solid #eee",
+          marginTop: "5%",
         }}
       >
-        <Grid item xs={12}>
-          <Grid
-            container
-            sx={{ alignItems: "center", justifyContent: "center" }}
-          >
-            <Grid item>progress bar</Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid
-            container
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "80%",
-              padding: "0 30px",
-            }}
-            spacing={2}
-          >
-            <Grid item xs={6}>
-              <FormControl
-                fullWidth
-                sx={{ m: 1 }}
-                style={{ paddingBottom: "20px" }}
-              >
-                <InputLabel htmlFor="outlined-adornment-amount">
-                  Amount
-                </InputLabel>
-                <OutlinedInput
-                  id="outlined-adornment-amount"
-                  startAdornment={
-                    <InputAdornment position="start">€</InputAdornment>
-                  }
-                  label="Amount"
-                  sx={{ borderColor: "#ee7f00" }}
-                />
-              </FormControl>
-              <Button variant="contained">Continue</Button>
-            </Grid>
-            <Grid item xs={6}>
-              <img src={boy} width="50%" />
+        {activePageIndex.activePageIndex === 1 ? (
+          <Grid container sx={{ GridStyle }}>
+            <Grid item>
+              <BirthDate
+                theme={theme}
+                activePageIndex={activePageIndex}
+                setActivePageIndex={setActivePageIndex}
+              />
             </Grid>
           </Grid>
-        </Grid>
+        ) : undefined}
+      </Grid>
+      <Grid item xs={6} sx={{ GridStyle }}>
+        {/* change absolute width to a responsive one */}
+
+        <img src={boy} width="150px" />
       </Grid>
     </ThemeProvider>
   );

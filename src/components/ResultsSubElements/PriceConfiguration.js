@@ -1,7 +1,9 @@
+
 import { styled, alpha, Box } from '@mui/system';
 import { Slider, sliderClasses } from '@mui/base/Slider';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { deepOrange, grey } from "@mui/material/colors";
 
 export function PriceConfiguration(props) {
     const [years, setYears] = useState(10);
@@ -17,10 +19,10 @@ export function PriceConfiguration(props) {
         props.resultChanger(years+updatedCapital);
     }
     return <div>
-            <Box sx={{ width: "20rem", padding:"5px" }}>
+            <Box width={"100%"}>
                 <h3>Capital</h3>
 
-                <StyledSlider sx={{margin: "1%"}}
+                <StyledSlider sx={{margin: "1%", width:"40vh"}}
                 defaultValue={10000}
                 min={10000}
                 max={1000000}
@@ -32,10 +34,10 @@ export function PriceConfiguration(props) {
             
                 
         </Box>
-        <Box sx={{ width: 320, padding:"5px" }}>
+        <Box >
             <h3>Period</h3>
                 <StyledSlider
-                sx={{margin: "1%"}}
+                sx={{margin: "1%", width:"40vh"}}
                 defaultValue={10}
                 min={10}
                 max={65}
@@ -54,11 +56,11 @@ export function PriceConfiguration(props) {
 const marks = [
     {
       value: 10000,
-      label: '10000',
+      label: '10.000',
     },
     {
       value: 1000000,
-      label: '1000000',
+      label: '1000.000',
     }
     
   ];
@@ -87,31 +89,11 @@ function valuetext(value) {
     return `${value}$`;
   }
 
-const blue = {
-    100: '#DAECFF',
-    200: '#99CCF3',
-    400: '#3399FF',
-    300: '#66B2FF',
-    500: '#007FFF',
-    600: '#0072E5',
-    900: '#003A75',
-  };
-  
-  const grey = {
-    50: '#f6f8fa',
-    100: '#eaeef2',
-    200: '#d0d7de',
-    300: '#afb8c1',
-    400: '#8c959f',
-    500: '#6e7781',
-    600: '#57606a',
-    700: '#424a53',
-    800: '#32383f',
-    900: '#24292f',
-  };
+
+
 const StyledSlider = styled(Slider)(
-    ({ theme }) => `
-    color: ${theme.palette.mode === 'light' ? blue[500] : blue[300]};
+  ({ theme }) => `
+    color: ${theme.palette.mode === "light" ? deepOrange[500] : deepOrange[300]};
     height: 6px;
     width: 100%;
     padding: 16px 0;
@@ -128,7 +110,7 @@ const StyledSlider = styled(Slider)(
     &.${sliderClasses.disabled} { 
       pointer-events: none;
       cursor: default;
-      color: ${theme.palette.mode === 'light' ? grey[300] : grey[600]};
+      color: ${theme.palette.mode === "light" ? grey[300] : grey[600]};
       opacity: 0.5;
     }
   
@@ -155,13 +137,13 @@ const StyledSlider = styled(Slider)(
         width: 8px;
         height: 8px;
         border-radius: 99%;
-        background-color: ${theme.palette.mode === 'light' ? blue[200] : blue[900]};
+        background-color: ${theme.palette.mode === 'light' ? deepOrange[200] : deepOrange[900]};
         top: 43%;
         transform: translateX(-50%);
       }
     
       & .${sliderClasses.markActive} {
-        background-color: ${theme.palette.mode === 'light' ? blue[500] : blue[400]};
+        background-color: ${theme.palette.mode === 'light' ? deepOrange[500] : deepOrange[400]};
       }
     
       & .${sliderClasses.markLabel} {
@@ -189,15 +171,15 @@ const StyledSlider = styled(Slider)(
       :hover,
       &.${sliderClasses.focusVisible} {
         box-shadow: 0 0 0 0.25rem ${alpha(
-          theme.palette.mode === 'light' ? blue[400] : blue[300],
-          0.15,
+          theme.palette.mode === "light" ? deepOrange[400] : deepOrange[300],
+          0.15
         )};
       }
   
       &.${sliderClasses.active} {
         box-shadow: 0 0 0 0.25rem ${alpha(
-          theme.palette.mode === 'light' ? blue[200] : blue[300],
-          0.3,
+          theme.palette.mode === "light" ? deepOrange[200] : deepOrange[300],
+          0.3
         )};
       }
     
@@ -214,5 +196,5 @@ const StyledSlider = styled(Slider)(
     
       
     }
-  `,
-  );
+  `
+);
