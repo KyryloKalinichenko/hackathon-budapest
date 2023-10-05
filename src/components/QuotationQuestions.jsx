@@ -2,9 +2,20 @@ import Grid from "@mui/material/Grid";
 import { ThemeProvider } from "@emotion/react";
 import boy from "../assets/images/watercolours/boy.png";
 import { GridStyle, theme } from "./Styling/Styles";
-import BirthDate from "./Questions/Birthdate";
+import Age from "./Questions/Age";
+import Smoker from "./Questions/Smoker";
+import TypeOfCalculation from "./Questions/TypeOfCalculation";
 
-function QuotationQuestions(activePageIndex, setActivePageIndex) {
+function QuotationQuestions({
+  activePageIndex,
+  setActivePageIndex,
+  age,
+  setAge,
+  isSmoker,
+  setIsSmoker,
+  typeOfCalculation,
+  setTypeOfCalculation,
+}) {
   console.log("activePageIndex:", activePageIndex);
   return (
     <ThemeProvider theme={theme}>
@@ -13,25 +24,37 @@ function QuotationQuestions(activePageIndex, setActivePageIndex) {
         xs={6}
         sx={{
           GridStyle,
-          // border: "1px solid #eee",
-          marginTop: "5%",
+          marginTop: "4%",
         }}
       >
-        {activePageIndex.activePageIndex === 1 ? (
-          <Grid container sx={{ GridStyle }}>
-            <Grid item>
-              <BirthDate
+        <Grid container sx={{ GridStyle }}>
+          <Grid item>
+            {activePageIndex === 1 ? (
+              <Age
                 theme={theme}
-                activePageIndex={activePageIndex}
                 setActivePageIndex={setActivePageIndex}
+                setAge={setAge}
               />
-            </Grid>
+            ) : undefined}
+            {activePageIndex === 2 ? (
+              <Smoker
+                theme={theme}
+                setActivePageIndex={setActivePageIndex}
+                setIsSmoker={setIsSmoker}
+              />
+            ) : undefined}
+            {activePageIndex === 3 ? (
+              <TypeOfCalculation
+                theme={theme}
+                setActivePageIndex={setActivePageIndex}
+                setTypeOfCalculation={setTypeOfCalculation}
+              />
+            ) : undefined}
           </Grid>
-        ) : undefined}
+        </Grid>
       </Grid>
       <Grid item xs={6} sx={{ GridStyle }}>
         {/* change absolute width to a responsive one */}
-
         <img src={boy} width="150px" />
       </Grid>
     </ThemeProvider>

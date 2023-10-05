@@ -8,6 +8,10 @@ import { Grid } from "@mui/material";
 function QuotationParentPage() {
   const [activePageIndex, setActivePageIndex] = useState(0);
 
+  const [age, setAge] = useState(0);
+  const [isSmoker, setIsSmoker] = useState(false);
+  const [typeOfCalculation, setTypeOfCalculation] = useState("fixed");
+
   return (
     <div
       style={{
@@ -37,6 +41,12 @@ function QuotationParentPage() {
             <QuotationQuestions
               activePageIndex={activePageIndex}
               setActivePageIndex={setActivePageIndex}
+              age={age}
+              setAge={setAge}
+              isSmoker={isSmoker}
+              setIsSmoker={setIsSmoker}
+              typeOfCalculation={typeOfCalculation}
+              setTypeOfCalculation={setTypeOfCalculation}
             />
           ) : undefined}
 
