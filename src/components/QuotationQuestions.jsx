@@ -1,6 +1,7 @@
 import Grid from "@mui/material/Grid";
 import { ThemeProvider } from "@emotion/react";
 import boy from "../assets/images/watercolours/boy.png";
+import momandchild from "../assets/images/watercolours/momandchild.png";
 import { GridStyle, theme } from "./Styling/Styles";
 import Age from "./Questions/Age";
 import Smoker from "./Questions/Smoker";
@@ -53,10 +54,29 @@ function QuotationQuestions({
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={6} sx={{ GridStyle }}>
-        {/* change absolute width to a responsive one */}
-        <img src={boy} width="150px" />
-      </Grid>
+      {activePageIndex === 1 ? (
+        <Grid item xs={6} sx={{ GridStyle }}>
+          {/* change absolute width to a responsive one */}
+          <img src={boy} width="175px" />
+        </Grid>
+      ) : undefined}
+      {activePageIndex === 2 ? (
+        <>
+          <Grid item xs={3} sx={{ GridStyle }}>
+            {/* change absolute width to a responsive one */}
+
+            <img
+              src={momandchild}
+              width="175px"
+              style={{ marginBottom: 0, paddingBottom: 0 }}
+            />
+            <h5 style={{ fontFamily: "Verdana", marginTop: 0, paddingTop: 0 }}>
+              Did you know NN has won the award of Decavi for the best insurance
+              product on the market 3 times in the last 5 years?
+            </h5>
+          </Grid>
+        </>
+      ) : undefined}
     </ThemeProvider>
   );
 }

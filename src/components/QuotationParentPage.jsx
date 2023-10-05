@@ -3,8 +3,9 @@ import Divider from "@mui/material/Divider";
 import Header from "./Header";
 import LandingPage from "./LandingPage";
 import QuotationQuestions from "./QuotationQuestions";
-import { Grid } from "@mui/material";
+import { Box, CircularProgress, Grid, Typography } from "@mui/material";
 import QuotationResult from "./QuotationResult";
+import progress1 from "../assets/images/visuals/progress1.png";
 
 function QuotationParentPage() {
   const [activePageIndex, setActivePageIndex] = useState(0);
@@ -27,9 +28,12 @@ function QuotationParentPage() {
       </div>
       <Divider />
       <div style={{ flex: "11" }}>
-        {activePageIndex > 0 && activePageIndex < 4 ? (
-          <p>Progress bar</p>
-        ) : undefined}
+        {/* {activePageIndex > 0 && activePageIndex < 4 ? (
+          activePageIndex === 1 ? (
+            // <img src={progress1} />
+            
+          ) : undefined
+        ) : undefined} */}
         <Grid
           container
           sx={{ justifyContent: "center", padding: "15%" }}

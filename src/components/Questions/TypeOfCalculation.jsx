@@ -32,7 +32,7 @@ function TypeOfCalculation({
           <FormControlLabel
             value="increasing"
             control={<Radio />}
-            label="Increading Amount"
+            label="Increasing Amount"
             onChange={() => setTypeOfCalculation("increasing")}
           />
         </RadioGroup>
