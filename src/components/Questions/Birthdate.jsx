@@ -21,6 +21,7 @@ function Birthdate({ theme, activePageIndex, setActivePageIndex }) {
         onClick={() => {
           activePageIndex.setActivePageIndex(activePageIndex++);
         }}
+        sx={{ marginTop: "10%" }}
       >
         Continue
       </Button>

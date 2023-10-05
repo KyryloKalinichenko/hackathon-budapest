@@ -1,38 +1,39 @@
-import { styled, alpha, Box } from '@mui/system';
-import { Slider, sliderClasses } from '@mui/base/Slider';
+import { styled, alpha, Box } from "@mui/system";
+import { Slider, sliderClasses } from "@mui/base/Slider";
 
-
-export function PriceConfiguration(){
-    return <Box sx={{ width: 320 }}>
-    <StyledSlider defaultValue={50} />
-    <StyledSlider defaultValue={10} />
-  </Box>
+export function PriceConfiguration() {
+  return (
+    <Box sx={{ width: 320 }}>
+      <StyledSlider defaultValue={50} />
+      <StyledSlider defaultValue={10} />
+    </Box>
+  );
 }
 const blue = {
-    100: '#DAECFF',
-    200: '#99CCF3',
-    400: '#3399FF',
-    300: '#66B2FF',
-    500: '#007FFF',
-    600: '#0072E5',
-    900: '#003A75',
-  };
-  
-  const grey = {
-    50: '#f6f8fa',
-    100: '#eaeef2',
-    200: '#d0d7de',
-    300: '#afb8c1',
-    400: '#8c959f',
-    500: '#6e7781',
-    600: '#57606a',
-    700: '#424a53',
-    800: '#32383f',
-    900: '#24292f',
-  };
+  100: "#DAECFF",
+  200: "#99CCF3",
+  400: "#3399FF",
+  300: "#66B2FF",
+  500: "#007FFF",
+  600: "#0072E5",
+  900: "#003A75",
+};
+
+const grey = {
+  50: "#f6f8fa",
+  100: "#eaeef2",
+  200: "#d0d7de",
+  300: "#afb8c1",
+  400: "#8c959f",
+  500: "#6e7781",
+  600: "#57606a",
+  700: "#424a53",
+  800: "#32383f",
+  900: "#24292f",
+};
 const StyledSlider = styled(Slider)(
-    ({ theme }) => `
-    color: ${theme.palette.mode === 'light' ? blue[500] : blue[300]};
+  ({ theme }) => `
+    color: ${theme.palette.mode === "light" ? blue[500] : blue[300]};
     height: 6px;
     width: 100%;
     padding: 16px 0;
@@ -49,7 +50,7 @@ const StyledSlider = styled(Slider)(
     &.${sliderClasses.disabled} { 
       pointer-events: none;
       cursor: default;
-      color: ${theme.palette.mode === 'light' ? grey[300] : grey[600]};
+      color: ${theme.palette.mode === "light" ? grey[300] : grey[600]};
       opacity: 0.5;
     }
   
@@ -86,17 +87,17 @@ const StyledSlider = styled(Slider)(
       :hover,
       &.${sliderClasses.focusVisible} {
         box-shadow: 0 0 0 0.25rem ${alpha(
-          theme.palette.mode === 'light' ? blue[400] : blue[300],
-          0.15,
+          theme.palette.mode === "light" ? blue[400] : blue[300],
+          0.15
         )};
       }
   
       &.${sliderClasses.active} {
         box-shadow: 0 0 0 0.25rem ${alpha(
-          theme.palette.mode === 'light' ? blue[200] : blue[300],
-          0.3,
+          theme.palette.mode === "light" ? blue[200] : blue[300],
+          0.3
         )};
       }
     }
-  `,
-  );
+  `
+);

@@ -29,5 +29,4 @@ export const GridStyle = {
   display: "flex",
   backgroundColor: "whitesmoke",
   padding: "10%",
-  border: "border: 1px solid #eee",
 };
