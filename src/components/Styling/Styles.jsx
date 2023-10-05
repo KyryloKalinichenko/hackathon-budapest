@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 import { deepOrange, grey } from "@mui/material/colors";
 
+
 export const theme = createTheme({
   palette: {
     primary: deepOrange,
@@ -24,9 +25,8 @@ export const theme = createTheme({
 });
 
 export const GridStyle = {
-  height: "10rem",
-  width: "20rem",
+  height: "15rem",
   display: "flex",
   backgroundColor: "whitesmoke",
-  padding: "10%",
+  margin: "2%"
 };
