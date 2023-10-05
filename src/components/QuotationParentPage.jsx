@@ -4,6 +4,7 @@ import Header from "./Header";
 import LandingPage from "./LandingPage";
 import QuotationQuestions from "./QuotationQuestions";
 import { Grid } from "@mui/material";
+import QuotationResult from "./QuotationResult";
 
 function QuotationParentPage() {
   const [activePageIndex, setActivePageIndex] = useState(0);
@@ -50,12 +51,7 @@ function QuotationParentPage() {
             />
           ) : undefined}
 
-          {/* {activePageIndex === 4 ? (
-          <QuotationResult
-            theme={theme}
-            setActivePageIndex={setActivePageIndex}
-          />
-        ) : undefined} */}
+          {activePageIndex === 4 ? <QuotationResult /> : undefined}
         </Grid>
       </div>
     </div>

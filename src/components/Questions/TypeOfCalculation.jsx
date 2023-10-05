@@ -15,7 +15,9 @@ function TypeOfCalculation({
   return (
     <ThemeProvider theme={theme}>
       <FormControl>
-        <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel>
+        <FormLabel id="demo-radio-buttons-group-label">
+          Which type of calculation do you want to use?
+        </FormLabel>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
           defaultValue="fixed"

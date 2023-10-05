@@ -12,22 +12,8 @@ function Header() {
         justifyContent: "flex-start",
       }}
     >
-      <Grid item xs={12}>
-        <h1
-          style={{
-            fontSize: 34,
-            fontWeight: 700,
-            lineHeight: "36px",
-            color: "#ea650d",
-            fontFamily: "Consolas",
-            textAlign: "center",
-          }}
-        >
-          NN Quotation Tool
-        </h1>
-      </Grid>
       <Grid>
-        <img src={logo} style={{ width: 120, height: 66 }} />
+        <img src={logo} style={{ width: 120, height: 66, paddingLeft: 20 }} />
       </Grid>
     </Grid>
   );
