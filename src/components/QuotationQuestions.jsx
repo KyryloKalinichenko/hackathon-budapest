@@ -6,6 +6,8 @@ import { GridStyle, theme } from "./Styling/Styles";
 import Age from "./Questions/Age";
 import Smoker from "./Questions/Smoker";
 import TypeOfCalculation from "./Questions/TypeOfCalculation";
+import fixed from "../assets/images/visuals/fixed.png";
+import increasing from "../assets/images/visuals/increasing.png";
 
 function QuotationQuestions({
   activePageIndex,
@@ -75,6 +77,15 @@ function QuotationQuestions({
               product on the market 3 times in the last 5 years?
             </h5>
           </Grid>
+        </>
+      ) : undefined}
+      {activePageIndex === 3 ? (
+        <>
+          {typeOfCalculation === "fixed" ? (
+            <img src={fixed} width="300px" />
+          ) : (
+            <img src={increasing} width="300px" />
+          )}
         </>
       ) : undefined}
     </ThemeProvider>

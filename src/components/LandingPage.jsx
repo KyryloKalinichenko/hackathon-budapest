@@ -18,8 +18,10 @@ function LandingPage({ setActivePageIndex }) {
         </Grid>
 
         <Grid item sx={{ padding: "3%" }}>
-          <h3>Protect your family’s income </h3>
-          <p>
+          <h3 style={{ fontFamily: "Calibri" }}>
+            Protect your family’s income{" "}
+          </h3>
+          <p style={{ fontFamily: "Calibri" }}>
             With a life insurance policy, you can offer your family financial
             protection tailored to their needs. That’s because you choose the
             capital insured and the frequency of your premiums.  You can’t limit
@@ -44,8 +46,8 @@ function LandingPage({ setActivePageIndex }) {
           <img src={mother} width="100%" />
         </Grid>
         <Grid item xs={6} sx={{ padding: "3%" }}>
-          <h3>How does it work?</h3>
-          <p>
+          <h3 style={{ fontFamily: "Calibri" }}>How does it work?</h3>
+          <p style={{ fontFamily: "Calibri" }}>
             You specify the capital that you want to insure, the duration of
             your cover and the beneficiaries. You choose the capital according
             to your specific situation: your income, your current and future
