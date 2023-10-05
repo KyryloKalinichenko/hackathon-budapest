@@ -7,13 +7,12 @@ import TextField from "@mui/material/TextField";
 function Age({ theme, setActivePageIndex, setAge }) {
   return (
     <ThemeProvider theme={theme}>
-      <FormLabel sx={{ marginBottom: "1%" }}>
-        What is your date of birth?
-      </FormLabel>
+      <FormLabel sx={{ marginBottom: "1%" }}>What is your age?</FormLabel>
       <TextField
         id="outlined-basic"
         variant="outlined"
         onChange={(event) => setAge(event.target.value)}
+        type={"number"}
       />
 
       <Button
