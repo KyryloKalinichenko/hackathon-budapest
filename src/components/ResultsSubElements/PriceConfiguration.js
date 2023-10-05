@@ -6,17 +6,41 @@ import { useState } from 'react';
 import { deepOrange, grey } from "@mui/material/colors";
 
 export function PriceConfiguration(props) {
-    const [years, setYears] = useState(10);
+    const [years, setYears] = useState(19);
     const [capital, setCapital] = useState(10000);
+    
+    if (props.typeOfCalculation === "fixed"){
+      props.resultChanger(calcFIxed())
+    }
+
+    function calcFIxed(){
+      return (4.15+(capital-25000)*(42.5-4.15)/975000)+((24.05+(capital-25000)*(661.52-24.05)/975000)-(4.15+(capital-25000)*(42.5-4.15)/975000))*(years-18)/(65-18);
+    }
+
+    function calcFlexed(){
+      return (4.7+(capital-25000)*(59.5-4.7)/975000)+((34.05+(capital-25000)*(996.11-34.55)/975000)-(4.7+(capital-25000)*(59.5-4.7)/975000))*(years-18)/(65-18);
+    }
+
+    
 
     function onChangeYears(event, updatedYears){
-        setYears(updatedYears);
-        props.resultChanger(updatedYears+capital);
+      setYears(updatedYears);
+      if (props.typeOfCalculation === "fixed"){
+          props.resultChanger(calcFIxed());
+      }
+      else {
+        props.resultChanger(calcFlexed());
+      }
     }
 
     function onChangeCapital(event, updatedCapital){
         setCapital(updatedCapital);
-        props.resultChanger(years+updatedCapital);
+        if (props.typeOfCalculation === "fixed"){
+          props.resultChanger(calcFIxed());
+        }
+        else {
+          props.resultChanger(calcFlexed());
+        }
     }
     return <div>
             <Box width={"100%"}>
@@ -38,8 +62,8 @@ export function PriceConfiguration(props) {
             <h3>Period</h3>
                 <StyledSlider
                 sx={{margin: "1%", width:"40vh"}}
-                defaultValue={10}
-                min={10}
+                defaultValue={19}
+                min={19}
                 max={65}
                 getAriaValueText={valuetext}
                 step={1}
@@ -56,23 +80,23 @@ export function PriceConfiguration(props) {
 const marks = [
     {
       value: 10000,
-      label: '10.000',
+      label: '10.000$',
     },
     {
       value: 1000000,
-      label: '1000.000',
+      label: '1000.000$',
     }
     
   ];
 
   const yearlyMarks = [
     {
-      value: 10,
-      label: '10',
+      value: 19,
+      label: '19 years',
     },
     {
       value: 65,
-      label: '65',
+      label: '65 years',
     }
     
   ];

@@ -4,6 +4,7 @@ import Header from "./Header";
 import LandingPage from "./LandingPage";
 import QuotationQuestions from "./QuotationQuestions";
 import { Grid } from "@mui/material";
+import QuotationResult from "./QuotationResult";
 
 function QuotationParentPage() {
   const [activePageIndex, setActivePageIndex] = useState(0);
@@ -48,7 +49,7 @@ function QuotationParentPage() {
               typeOfCalculation={typeOfCalculation}
               setTypeOfCalculation={setTypeOfCalculation}
             />
-          ) : undefined}
+          ) : <QuotationResult age={age} isSmoker={isSmoker} typeOfCalculation={typeOfCalculation}></QuotationResult>}
 
           {/* {activePageIndex === 4 ? (
           <QuotationResult
